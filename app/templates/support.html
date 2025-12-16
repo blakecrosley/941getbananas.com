@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}Support{% endblock %}
+{% block description %}Get help with Get Bananas - The hand-drawn shopping list app. FAQ and contact information.{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="support-content">
+        <h1 class="text-center mb-5">Support</h1>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="contact-box text-center">
+                    <h2>Contact Us</h2>
+                    <p>Have a question or need help? Email us at:</p>
+                    <p style="font-size: 1.4rem;"><a href="mailto:support@941apps.com">support@941apps.com</a></p>
+                    <p class="text-muted small mb-0">We typically respond within 24-48 hours.</p>
+                </div>
+
+                <h2 class="mb-4" style="font-family: var(--font-handwritten); font-size: 2.2rem;">Frequently Asked Questions</h2>
+
+                <div class="faq-item">
+                    <div class="faq-question">How do I sync my shopping list across devices?</div>
+                    <p class="faq-answer">Get Bananas automatically syncs via iCloud Drive. Make sure iCloud is enabled on all your devices (Settings &rarr; [Your Name] &rarr; iCloud &rarr; iCloud Drive). Your list will sync automatically when connected to the internet.</p>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">My list isn't syncing. What should I do?</div>
+                    <p class="faq-answer">Try these steps: (1) Pull down on the list to refresh, (2) Go to Settings in the app and tap "Sync from iCloud", (3) Make sure iCloud Drive is enabled in your device settings, (4) Check that you're signed into the same Apple ID on all devices.</p>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">How do I add a new section?</div>
+                    <p class="faq-answer">When adding a new item, type a new section name in the Section field. The section will be created automatically.</p>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Can I use Get Bananas on my Apple Watch?</div>
+                    <p class="faq-answer">Yes! Get Bananas includes a full Apple Watch companion app. Your list syncs automatically between your iPhone and Apple Watch.</p>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What is Claude Desktop integration?</div>
+                    <p class="faq-answer">On macOS, you can optionally connect Get Bananas to Claude Desktop (Anthropic's AI assistant) to manage your shopping list with natural language. For example, you can ask Claude "Add milk to my shopping list" or "What's on my grocery list?" This feature requires Claude Desktop to be installed separately.</p>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Is my data private?</div>
+                    <p class="faq-answer">Yes. Your shopping list is stored only on your device and in your personal iCloud account. We don't have access to your data and don't collect any personal information. See our <a href="/privacy">Privacy Policy</a> for details.</p>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">How do I delete all my data?</div>
+                    <p class="faq-answer">Simply delete the app from your device. If you want to remove iCloud data, you can delete the Get Bananas data from iCloud Drive (Files app &rarr; iCloud Drive &rarr; Get Bananas folder).</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

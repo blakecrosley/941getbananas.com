@@ -1,0 +1,471 @@
+/* Get Bananas - Hand-Drawn Theme
+   Matching iOS app aesthetic with paper/notebook feel */
+
+:root {
+    /* Light mode (default) - Paper and ink */
+    --banana-primary: #F5C842;      /* Golden banana yellow */
+    --banana-secondary: #8BC34A;    /* Sage green (icon background) */
+    --banana-pen: #19191F;          /* Charcoal ink */
+    --banana-background: #FFFEF9;   /* Warm paper white */
+    --banana-surface: #F5F4EF;      /* Slightly darker paper */
+    --banana-muted: #666666;        /* Secondary text */
+
+    /* Typography */
+    --font-handwritten: 'Caveat', 'Bradley Hand', cursive;
+    --font-display: 'Fredoka', 'Noteworthy', -apple-system, sans-serif;
+
+    /* Bootstrap overrides */
+    --bs-primary: var(--banana-primary);
+    --bs-body-bg: var(--banana-background);
+    --bs-body-color: var(--banana-pen);
+    --bs-link-color: var(--banana-secondary);
+}
+
+[data-theme="dark"] {
+    --banana-pen: #E6E6E0;          /* Off-white text */
+    --banana-background: #191919;   /* Near-black */
+    --banana-surface: #252525;      /* Darker surface */
+    --banana-muted: #999999;
+
+    --bs-body-bg: var(--banana-background);
+    --bs-body-color: var(--banana-pen);
+}
+
+/* Typography - Handwritten feel */
+body {
+    font-family: var(--font-display);
+    background-color: var(--banana-background);
+    color: var(--banana-pen);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: 500;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-handwritten);
+    font-weight: 700;
+    color: var(--banana-pen);
+}
+
+h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    color: var(--banana-pen);
+}
+
+p, li {
+    font-family: var(--font-display);
+    font-weight: 400;
+}
+
+/* Override Bootstrap's text-muted */
+.text-muted {
+    color: var(--banana-muted) !important;
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--banana-surface);
+    transition: background-color 0.3s ease;
+    border-bottom: 2px solid var(--banana-pen);
+}
+
+.navbar-brand {
+    font-family: var(--font-handwritten);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--banana-pen) !important;
+}
+
+.nav-link {
+    font-family: var(--font-display);
+    color: var(--banana-pen) !important;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.nav-link:hover {
+    color: var(--banana-secondary) !important;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+    background: none;
+    border: 2px solid var(--banana-pen);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--banana-pen);
+    font-size: 1.2rem;
+}
+
+.theme-toggle:hover {
+    background-color: var(--banana-primary);
+    border-color: var(--banana-primary);
+    color: var(--banana-pen);
+}
+
+/* Logo/brand image switching */
+.logo-light {
+    display: block;
+}
+
+.logo-dark {
+    display: none;
+}
+
+[data-theme="dark"] .logo-light {
+    display: none;
+}
+
+[data-theme="dark"] .logo-dark {
+    display: block;
+}
+
+/* Cards and surfaces */
+.card {
+    background-color: var(--banana-surface);
+    border: 2px solid var(--banana-pen);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px) rotate(-0.5deg);
+    box-shadow: 4px 4px 0 var(--banana-pen);
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--banana-primary);
+    border: 2px solid var(--banana-pen);
+    border-radius: 8px;
+    padding: 12px 28px;
+    font-family: var(--font-display);
+    font-weight: 600;
+    color: var(--banana-pen);
+    transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #e6b93a;
+    border-color: var(--banana-pen);
+    color: var(--banana-pen);
+    transform: translateY(-2px);
+    box-shadow: 2px 2px 0 var(--banana-pen);
+}
+
+/* Hero section */
+.hero {
+    padding: 80px 0;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    color: var(--banana-pen);
+    line-height: 1.1;
+}
+
+.hero .lead {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    color: var(--banana-muted);
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+/* Hero mascot - banana character */
+.hero-mascot {
+    position: relative;
+}
+
+.mascot-image {
+    max-width: 260px;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(4px 4px 0 rgba(0, 0, 0, 0.1));
+    animation: wobble 4s ease-in-out infinite;
+}
+
+@keyframes wobble {
+    0%, 100% { transform: translateY(0) rotate(-2deg); }
+    25% { transform: translateY(-8px) rotate(1deg); }
+    50% { transform: translateY(0) rotate(2deg); }
+    75% { transform: translateY(-4px) rotate(-1deg); }
+}
+
+/* Features section */
+.features {
+    padding: 80px 0;
+    background-color: var(--banana-surface);
+}
+
+.features h2 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.feature-icon {
+    width: 72px;
+    height: 72px;
+    background-color: var(--banana-primary);
+    border: 2px solid var(--banana-pen);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.feature-card {
+    text-align: center;
+    padding: 2rem 1.5rem;
+}
+
+.feature-card h5 {
+    font-family: var(--font-handwritten);
+    font-size: 1.6rem;
+    color: var(--banana-pen);
+    margin-bottom: 0.75rem;
+}
+
+.feature-card p {
+    color: var(--banana-muted);
+    font-size: 1rem;
+}
+
+/* CTA section */
+.cta {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.cta h2 {
+    font-size: 2.8rem;
+    color: var(--banana-pen);
+    margin-bottom: 1rem;
+}
+
+.cta p {
+    color: var(--banana-muted);
+    font-size: 1.2rem;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--banana-surface);
+    padding: 48px 0 32px;
+    margin-top: auto;
+    border-top: 2px solid var(--banana-pen);
+}
+
+.footer h6 {
+    font-family: var(--font-handwritten);
+    font-size: 1.4rem;
+    color: var(--banana-pen);
+    margin-bottom: 1rem;
+}
+
+.footer p {
+    color: var(--banana-muted);
+}
+
+.footer a {
+    color: var(--banana-muted);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.footer a:hover {
+    color: var(--banana-secondary);
+}
+
+.footer hr {
+    border-color: var(--banana-pen);
+    opacity: 0.3;
+}
+
+/* App Store badge */
+.app-store-badge {
+    height: 54px;
+    transition: transform 0.2s ease;
+    border-radius: 8px;
+}
+
+.app-store-badge:hover {
+    transform: scale(1.05);
+}
+
+/* Legal pages */
+.legal-content {
+    padding: 60px 0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.legal-content h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.legal-content .last-updated {
+    color: var(--banana-muted);
+    margin-bottom: 2rem;
+}
+
+.legal-content h2 {
+    font-size: 1.8rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.legal-content p, .legal-content ul {
+    color: var(--banana-muted);
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+.legal-content ul {
+    padding-left: 1.5rem;
+}
+
+.legal-content li {
+    margin-bottom: 0.5rem;
+}
+
+.highlight-box {
+    background-color: var(--banana-surface);
+    border: 2px solid var(--banana-pen);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.highlight-box strong {
+    color: var(--banana-pen);
+}
+
+/* Support page */
+.support-content {
+    padding: 60px 0;
+}
+
+.contact-box {
+    background-color: var(--banana-primary);
+    border: 2px solid var(--banana-pen);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+}
+
+.contact-box h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.contact-box a {
+    color: var(--banana-pen);
+    font-weight: 600;
+}
+
+.faq-item {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px dashed var(--banana-pen);
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+}
+
+.faq-question {
+    font-family: var(--font-handwritten);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--banana-pen);
+    margin-bottom: 0.75rem;
+}
+
+.faq-answer {
+    color: var(--banana-muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+/* Hand-drawn decorative elements */
+.hand-underline {
+    position: relative;
+    display: inline-block;
+}
+
+.hand-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--banana-primary);
+    transform: rotate(-1deg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero {
+        padding: 50px 0;
+    }
+
+    .hero .lead {
+        font-size: 1.2rem;
+    }
+
+    .features {
+        padding: 50px 0;
+    }
+
+    .features h2 {
+        font-size: 2.2rem;
+    }
+
+    .cta h2 {
+        font-size: 2rem;
+    }
+
+    .legal-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .mascot-image {
+        max-width: 200px;
+    }
+}
+
+/* Subtle paper texture effect */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)'/%3E%3C/svg%3E");
+    opacity: 0.02;
+    pointer-events: none;
+    z-index: -1;
+}
+
+[data-theme="dark"] .hero::before {
+    opacity: 0.03;
+}
