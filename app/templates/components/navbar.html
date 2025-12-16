@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
         <a class="navbar-brand" href="/">
-            Get Bananas
+            <span class="brand-emoji">🍌</span>Get Bananas
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -23,9 +23,10 @@
                 class="theme-toggle"
                 @click="theme = theme === 'dark' ? 'light' : 'dark'; localStorage.setItem('theme', theme)"
                 :title="theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'"
+                :aria-label="theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'"
             >
-                <span x-show="theme === 'light'">&#9790;</span>
-                <span x-show="theme === 'dark'">&#9728;</span>
+                <span x-show="theme === 'light'" aria-hidden="true">&#9790;</span>
+                <span x-show="theme === 'dark'" aria-hidden="true">&#9728;</span>
             </button>
         </div>
     </div>
