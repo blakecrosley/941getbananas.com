@@ -26,7 +26,7 @@
     --banana-pen: #E6E6E0;          /* Off-white text */
     --banana-background: #191919;   /* Near-black */
     --banana-surface: #252525;      /* Darker surface */
-    --banana-muted: #a0a0a0;        /* Better contrast in dark mode */
+    --banana-muted: #b8b8b8;        /* Better contrast in dark mode */
 
     --bs-body-bg: var(--banana-background);
     --bs-body-color: var(--banana-pen);
