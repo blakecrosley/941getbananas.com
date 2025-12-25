@@ -10,6 +10,12 @@
     --banana-surface: #F5F4EF;      /* Slightly darker paper */
     --banana-muted: #555555;        /* Secondary text - improved contrast */
 
+    /* Feature icon accent colors - cohesive palette */
+    --banana-accent-blue: #7AA4F7;    /* iCloud Sync */
+    --banana-accent-purple: #9C7CF4;  /* AI-Powered */
+    --banana-accent-pink: #F67590;    /* Languages */
+    --banana-accent-dark: #4A4A4A;    /* Privacy (softer than pure black) */
+
     /* Typography */
     --font-handwritten: 'Caveat', 'Bradley Hand', cursive;
     --font-display: 'Fredoka', 'Noteworthy', -apple-system, sans-serif;
@@ -27,6 +33,12 @@
     --banana-background: #191919;   /* Near-black */
     --banana-surface: #252525;      /* Darker surface */
     --banana-muted: #b8b8b8;        /* Better contrast in dark mode */
+
+    /* Accent colors adjusted for dark mode */
+    --banana-accent-blue: #8AB4FF;
+    --banana-accent-purple: #AC8CFF;
+    --banana-accent-pink: #FF8599;
+    --banana-accent-dark: #5A5A5A;
 
     --bs-body-bg: var(--banana-background);
     --bs-body-color: var(--banana-pen);
@@ -137,6 +149,10 @@ button:focus-visible,
     color: var(--banana-pen);
 }
 
+.theme-toggle:active {
+    transform: scale(0.95);
+}
+
 /* Logo/brand image switching */
 .logo-light {
     display: block;
@@ -225,7 +241,7 @@ button:focus-visible,
     color: var(--banana-muted);
     margin-bottom: 2rem;
     font-weight: 400;
-    line-height: 1.6;
+    line-height: 1.75;
 }
 
 /* Hero mascot - banana character */
@@ -247,6 +263,20 @@ button:focus-visible,
     50% { transform: translateY(-10px); }
 }
 
+/* Accessibility: Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .mascot-image {
+        animation: none;
+    }
+
+    .card,
+    .btn-primary,
+    .theme-toggle,
+    .app-store-badge {
+        transition: none;
+    }
+}
+
 /* Features section */
 .features {
     padding: 80px 0;
@@ -256,6 +286,12 @@ button:focus-visible,
 .features h2 {
     font-size: 3rem;
     margin-bottom: 0.5rem;
+}
+
+.features-subtitle {
+    font-size: 1.2rem;
+    color: var(--banana-pen);
+    opacity: 0.85;
 }
 
 .feature-icon {
@@ -269,6 +305,97 @@ button:focus-visible,
     justify-content: center;
     margin-bottom: 1rem;
     font-size: 2rem;
+}
+
+/* Feature icon color variants - soft bg (20%), bold icon (100%) */
+.feature-icon--primary {
+    background-color: rgba(245, 200, 66, 0.2);
+    color: #F5C842;
+}
+.feature-icon--secondary {
+    background-color: rgba(139, 195, 74, 0.2);
+    color: #8BC34A;
+}
+.feature-icon--blue {
+    background-color: rgba(122, 164, 247, 0.2);
+    color: #7AA4F7;
+}
+.feature-icon--purple {
+    background-color: rgba(156, 124, 244, 0.2);
+    color: #9C7CF4;
+}
+.feature-icon--pink {
+    background-color: rgba(246, 117, 144, 0.2);
+    color: #F67590;
+}
+.feature-icon--dark {
+    background-color: rgba(74, 74, 74, 0.12);
+    color: #4A4A4A;
+}
+
+.feature-icon-img {
+    display: block;
+    width: 32px;
+    height: 32px;
+    background-color: currentColor;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+}
+
+/* Apply SVG as mask so it takes the color */
+.feature-icon--blue .feature-icon-img {
+    -webkit-mask-image: url('/static/images/icons/icloud.svg');
+    mask-image: url('/static/images/icons/icloud.svg');
+}
+.feature-icon--primary .feature-icon-img {
+    -webkit-mask-image: url('/static/images/icons/pencil-scribble.svg');
+    mask-image: url('/static/images/icons/pencil-scribble.svg');
+}
+.feature-icon--secondary .feature-icon-img {
+    -webkit-mask-image: url('/static/images/icons/applewatch.svg');
+    mask-image: url('/static/images/icons/applewatch.svg');
+}
+.feature-icon--purple .feature-icon-img {
+    -webkit-mask-image: url('/static/images/icons/sparkles.svg');
+    mask-image: url('/static/images/icons/sparkles.svg');
+}
+.feature-icon--pink .feature-icon-img {
+    -webkit-mask-image: url('/static/images/icons/globe.svg');
+    mask-image: url('/static/images/icons/globe.svg');
+}
+.feature-icon--dark .feature-icon-img {
+    -webkit-mask-image: url('/static/images/icons/lock-shield.svg');
+    mask-image: url('/static/images/icons/lock-shield.svg');
+}
+
+/* Dark mode - higher opacity bg (35%) for visibility */
+[data-theme="dark"] .feature-icon--primary {
+    background-color: rgba(255, 213, 79, 0.35);
+    color: #FFD54F;
+}
+[data-theme="dark"] .feature-icon--secondary {
+    background-color: rgba(165, 214, 107, 0.35);
+    color: #A5D66B;
+}
+[data-theme="dark"] .feature-icon--blue {
+    background-color: rgba(138, 180, 255, 0.35);
+    color: #8AB4FF;
+}
+[data-theme="dark"] .feature-icon--purple {
+    background-color: rgba(172, 140, 255, 0.35);
+    color: #AC8CFF;
+}
+[data-theme="dark"] .feature-icon--pink {
+    background-color: rgba(255, 133, 153, 0.35);
+    color: #FF8599;
+}
+[data-theme="dark"] .feature-icon--dark {
+    background-color: rgba(200, 200, 200, 0.2);
+    color: #B8B8B8;
 }
 
 .feature-card {
@@ -291,9 +418,9 @@ button:focus-visible,
 
 /* CTA section */
 .cta {
-    padding: 100px 0;
+    padding: 80px 0;
     text-align: center;
-    border-top: 2px dashed var(--banana-pen);
+    border-top: 2px solid var(--banana-pen);
 }
 
 .cta h2 {
