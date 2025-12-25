@@ -19,3 +19,8 @@ async def privacy(request: Request):
 @router.get("/support")
 async def support(request: Request):
     return templates.TemplateResponse("support.html", {"request": request})
+
+
+@router.get("/terms")
+async def terms(request: Request):
+    return templates.TemplateResponse("terms.html", {"request": request})
