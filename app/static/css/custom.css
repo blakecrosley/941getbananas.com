@@ -310,7 +310,7 @@ button:focus-visible,
 /* Feature icon color variants - soft bg (20%), bold icon (100%) */
 .feature-icon--primary {
     background-color: rgba(245, 200, 66, 0.2);
-    color: #F5C842;
+    color: #D4A012; /* Darkened for visibility on light bg */
 }
 .feature-icon--secondary {
     background-color: rgba(139, 195, 74, 0.2);
@@ -412,7 +412,7 @@ button:focus-visible,
 
 .feature-card p {
     color: var(--banana-muted);
-    font-size: 1rem;
+    font-size: 1.05rem;
     line-height: 1.6;
 }
 
