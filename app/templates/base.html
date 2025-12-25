@@ -6,6 +6,19 @@
     <title>{% block title %}Get Bananas{% endblock %} | Hand-Drawn Shopping List</title>
     <meta name="description" content="{% block description %}Get Bananas is a beautiful, hand-drawn shopping list app that syncs across iPhone, iPad, Mac, and Apple Watch. Your groceries, your way.{% endblock %}">
 
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{% block og_title %}Get Bananas | Hand-Drawn Shopping List{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}Get Bananas is a beautiful, hand-drawn shopping list app that syncs across iPhone, iPad, Mac, and Apple Watch.{% endblock %}">
+    <meta property="og:image" content="{% block og_image %}{{ url_for('static', path='images/app-icon.png') }}{% endblock %}">
+    <meta property="og:site_name" content="Get Bananas">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Get Bananas | Hand-Drawn Shopping List">
+    <meta name="twitter:description" content="Get Bananas is a beautiful, hand-drawn shopping list app that syncs across iPhone, iPad, Mac, and Apple Watch.">
+    <meta name="twitter:image" content="{{ url_for('static', path='images/app-icon.png') }}">
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="{{ url_for('static', path='images/app-icon.png') }}">
     <link rel="apple-touch-icon" href="{{ url_for('static', path='images/app-icon.png') }}">
