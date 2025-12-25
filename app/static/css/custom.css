@@ -255,6 +255,8 @@ button:focus-visible,
     height: auto;
     filter: drop-shadow(4px 4px 0 rgba(0, 0, 0, 0.1));
     animation: float 3s ease-in-out infinite;
+    /* iOS app icon squircle shape */
+    border-radius: 22.37%;
 }
 
 /* Simplified float animation - no rotation */
