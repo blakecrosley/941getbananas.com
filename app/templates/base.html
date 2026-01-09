@@ -5,13 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Get Bananas{% endblock %} | Hand-Drawn Shopping List</title>
     <meta name="description" content="{% block description %}Get Bananas is a beautiful, hand-drawn shopping list app that syncs across iPhone, iPad, Mac, and Apple Watch. Your groceries, your way.{% endblock %}">
+    <meta name="theme-color" content="#FFD93D">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://941getbananas.com{% block canonical %}{{ request.url.path }}{% endblock %}">
+
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "941 Apps, LLC",
+        "url": "https://941getbananas.com",
+        "logo": "https://941getbananas.com/static/images/app-icon.png",
+        "description": "Beautiful, hand-drawn shopping list app for Apple devices"
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Get Bananas",
+        "description": "A beautiful, hand-drawn shopping list app that syncs across iPhone, iPad, Mac, and Apple Watch.",
+        "applicationCategory": "LifestyleApplication",
+        "operatingSystem": "iOS, iPadOS, macOS, watchOS",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/PreOrder"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "941 Apps, LLC"
+        },
+        "url": "https://941getbananas.com",
+        "featureList": [
+            "Hand-drawn visual style",
+            "iCloud sync across devices",
+            "iPhone, iPad, Mac, and Apple Watch support",
+            "Beautiful animations",
+            "Simple and intuitive interface"
+        ],
+        "keywords": "shopping list, groceries, hand-drawn, apple watch, icloud sync"
+    }
+    </script>
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://941getbananas.com{{ request.url.path }}">
     <meta property="og:title" content="{% block og_title %}Get Bananas | Hand-Drawn Shopping List{% endblock %}">
     <meta property="og:description" content="{% block og_description %}Get Bananas is a beautiful, hand-drawn shopping list app that syncs across iPhone, iPad, Mac, and Apple Watch.{% endblock %}">
-    <meta property="og:image" content="{% block og_image %}{{ url_for('static', path='images/app-icon.png') }}{% endblock %}">
+    <meta property="og:image" content="{% block og_image %}https://941getbananas.com/static/images/og-image.png{% endblock %}">
     <meta property="og:site_name" content="Get Bananas">
+    <meta property="og:locale" content="en_US">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
@@ -40,9 +89,12 @@
     {% block head %}{% endblock %}
 </head>
 <body class="d-flex flex-column min-vh-100">
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link visually-hidden-focusable">Skip to main content</a>
+
     {% include "components/navbar.html" %}
 
-    <main class="flex-grow-1">
+    <main id="main-content" class="flex-grow-1">
         {% block content %}{% endblock %}
     </main>
 
