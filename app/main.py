@@ -23,12 +23,45 @@ class HeadRequestMiddleware(BaseHTTPMiddleware):
         return await call_next(request)
 
 
+class SecurityHeadersMiddleware(BaseHTTPMiddleware):
+    """Add security headers to all responses."""
+
+    async def dispatch(self, request, call_next):
+        response = await call_next(request)
+
+        # Core security headers
+        response.headers["X-Content-Type-Options"] = "nosniff"
+        response.headers["X-Frame-Options"] = "DENY"
+        response.headers["X-XSS-Protection"] = "1; mode=block"
+        response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
+        response.headers["Permissions-Policy"] = "geolocation=(), microphone=(), camera=()"
+
+        # Content Security Policy
+        csp_directives = [
+            "default-src 'self'",
+            "script-src 'self' https://cdn.jsdelivr.net 'unsafe-inline'",
+            "style-src 'self' https://cdn.jsdelivr.net https://fonts.googleapis.com 'unsafe-inline'",
+            "font-src 'self' https://fonts.gstatic.com",
+            "img-src 'self' https://developer.apple.com data:",
+            "frame-ancestors 'none'",
+            "base-uri 'self'",
+            "form-action 'self'",
+        ]
+        response.headers["Content-Security-Policy"] = "; ".join(csp_directives)
+
+        # HSTS - enforce HTTPS for 1 year
+        response.headers["Strict-Transport-Security"] = "max-age=31536000; includeSubDomains"
+
+        return response
+
+
 app = FastAPI(
     title="Get Bananas",
     description="The hand-drawn shopping list for your whole family",
 )
 
-# Middleware
+# Middleware (order matters: last added = first executed)
+app.add_middleware(SecurityHeadersMiddleware)
 app.add_middleware(HeadRequestMiddleware)
 
 # Static files
