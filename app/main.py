@@ -58,6 +58,9 @@ class SecurityHeadersMiddleware(BaseHTTPMiddleware):
 app = FastAPI(
     title="Get Bananas",
     description="The hand-drawn shopping list for your whole family",
+    docs_url=None,  # Disable Swagger UI in production
+    redoc_url=None,  # Disable ReDoc in production
+    openapi_url=None,  # Disable OpenAPI schema entirely
 )
 
 # Middleware (order matters: last added = first executed)
