@@ -13,6 +13,11 @@ __pycache__/
 venv/
 ENV/
 
+# Environment
+.env
+.env.local
+.env.*.local
+
 # Development
 .server.pid
 .server.log
