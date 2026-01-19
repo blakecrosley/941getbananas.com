@@ -6,6 +6,7 @@ from starlette.middleware.base import BaseHTTPMiddleware
 
 from app.routes import pages
 from app.security.headers import SecurityHeadersMiddleware
+from app.security.logging import SecurityLogMiddleware
 
 
 class HeadRequestMiddleware(BaseHTTPMiddleware):
@@ -35,6 +36,7 @@ app = FastAPI(
 # Middleware (order matters: last added = first executed)
 app.add_middleware(SecurityHeadersMiddleware)
 app.add_middleware(HeadRequestMiddleware)
+app.add_middleware(SecurityLogMiddleware, site_name="941getbananas.com")
 
 # Static files
 app.mount(
