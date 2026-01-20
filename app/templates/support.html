@@ -3,6 +3,65 @@
 {% block title %}Support{% endblock %}
 {% block description %}Get help with Get Bananas - The hand-drawn shopping list app. FAQ and contact information.{% endblock %}
 
+{% block head %}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How do I sync my shopping list across devices?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Get Bananas automatically syncs via iCloud Drive. Make sure iCloud is enabled on all your devices (Settings → [Your Name] → iCloud → iCloud Drive). Your list will sync automatically when connected to the internet."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "My list isn't syncing. What should I do?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Try these steps: (1) Pull down on the list to refresh, (2) Go to Settings in the app and tap 'Sync from iCloud', (3) Make sure iCloud Drive is enabled in your device settings, (4) Check that you're signed into the same Apple ID on all devices."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can I use Get Bananas on my Apple Watch?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes! Get Bananas includes a full Apple Watch companion app. Your list syncs automatically between your iPhone and Apple Watch."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What is Claude Desktop integration?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "On macOS, you can optionally connect Get Bananas to Claude Desktop (Anthropic's AI assistant) to manage your shopping list with natural language. For example, you can ask Claude 'Add milk to my shopping list' or 'What's on my grocery list?' This feature requires Claude Desktop to be installed separately."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Is my data private?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Your shopping list is stored only on your device and in your personal iCloud account. We don't have access to your data and don't collect any personal information."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do I delete all my data?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Simply delete the app from your device. If you want to remove iCloud data, you can delete the Get Bananas data from iCloud Drive (Files app → iCloud Drive → Get Bananas folder)."
+            }
+        }
+    ]
+}
+</script>
+{% endblock %}
+
 {% block content %}
 <div class="container">
     <div class="support-content">

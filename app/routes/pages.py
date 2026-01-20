@@ -1,10 +1,11 @@
 from fastapi import APIRouter, Request
-from fastapi.responses import PlainTextResponse, Response, RedirectResponse
+from fastapi.responses import PlainTextResponse, Response, RedirectResponse, FileResponse
 from fastapi.templating import Jinja2Templates
 from pathlib import Path
 
 router = APIRouter()
-templates = Jinja2Templates(directory=Path(__file__).parent.parent / "templates")
+APP_DIR = Path(__file__).parent.parent
+templates = Jinja2Templates(directory=APP_DIR / "templates")
 
 SITE_URL = "https://941getbananas.com"
 
@@ -146,43 +147,18 @@ async def terms(request: Request):
     return templates.TemplateResponse("terms.html", {"request": request})
 
 
-@router.get("/llms.txt", response_class=PlainTextResponse)
+@router.get("/llms.txt")
 async def llms_txt():
     """AI context file per llmstxt.org specification."""
-    content = """# 941 Get Bananas
+    static_file = APP_DIR / "static" / "llms.txt"
+    return FileResponse(static_file, media_type="text/plain")
 
-> Banana tracking made simple - never run out of bananas again.
 
-## About
-
-941 Get Bananas is a playful banana tracking app from 941 Apps, LLC. Part of the 941 ecosystem of simple, necessary applications built with care.
-
-## Features
-
-- Track your banana inventory
-- Get reminders when running low
-- Simple, delightful interface
-- Part of the 941 Apps family
-
-## Company
-
-941 Get Bananas is developed by 941 Apps, LLC, a design and engineering studio based in Pasadena, CA.
-
-- Website: https://941apps.com
-- Contact: hello@941apps.com
-
-## Related
-
-- 941 Apps: https://941apps.com
-- Ace Citizenship: https://acecitizenship.app
-- 941 Return: https://941return.com
-
-## Technical
-
-- Platform: Web (FastAPI + HTMX)
-- Deployment: Railway
-"""
-    return PlainTextResponse(content=content.strip())
+@router.get("/llms-full.txt")
+async def llms_full_txt():
+    """Extended AI context file with complete details."""
+    static_file = APP_DIR / "static" / "llms-full.txt"
+    return FileResponse(static_file, media_type="text/plain")
 
 
 @router.get("/.well-known/llms.txt")

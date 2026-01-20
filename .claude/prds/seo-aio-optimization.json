@@ -1,0 +1,79 @@
+{
+  "project": {
+    "name": "Banana List (941getbananas.com) SEO/AIO Optimization",
+    "description": "SEO and AI Optimization improvements for 941getbananas.com grocery list app"
+  },
+  "stories": [
+    {
+      "id": "seo-1",
+      "title": "Add FAQPage schema",
+      "description": "Implement FAQPage structured data for common questions",
+      "acceptance_criteria": [
+        "Create FAQ section with common user questions",
+        "Add FAQPage JSON-LD schema",
+        "Include questions about: iCloud sync, sharing lists, Apple Watch",
+        "Validate with Rich Results Test"
+      ],
+      "priority": 1,
+      "passes": false,
+      "attempts": 0
+    },
+    {
+      "id": "seo-2",
+      "title": "Implement hreflang tags",
+      "description": "Add hreflang for international SEO if supporting multiple languages",
+      "acceptance_criteria": [
+        "Identify supported languages",
+        "Add hreflang link elements to head",
+        "Include x-default for English",
+        "Validate with hreflang checker"
+      ],
+      "priority": 2,
+      "passes": false,
+      "attempts": 0
+    },
+    {
+      "id": "aio-1",
+      "title": "Create llms.txt files",
+      "description": "Implement llms.txt for AI discoverability",
+      "acceptance_criteria": [
+        "Create /llms.txt with app overview",
+        "Create /llms-full.txt with detailed features",
+        "Include: list sharing, iCloud sync, Apple Watch support",
+        "Add pricing and availability information"
+      ],
+      "priority": 1,
+      "passes": false,
+      "attempts": 0
+    },
+    {
+      "id": "seo-3",
+      "title": "Add SoftwareApplication schema",
+      "description": "Implement SoftwareApplication schema for app listing",
+      "acceptance_criteria": [
+        "Add SoftwareApplication JSON-LD",
+        "Include App Store rating and review count",
+        "Add screenshots and icon",
+        "Include pricing information",
+        "Validate with Rich Results Test"
+      ],
+      "priority": 2,
+      "passes": false,
+      "attempts": 0
+    },
+    {
+      "id": "seo-4",
+      "title": "Optimize images for Core Web Vitals",
+      "description": "Convert images to WebP and implement lazy loading",
+      "acceptance_criteria": [
+        "Convert all images to WebP",
+        "Implement responsive srcset",
+        "Add lazy loading to below-fold images",
+        "Verify LCP and CLS improvements"
+      ],
+      "priority": 3,
+      "passes": false,
+      "attempts": 0
+    }
+  ]
+}

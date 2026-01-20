@@ -1,0 +1,139 @@
+# Get Bananas - Complete Documentation
+
+> A hand-drawn shopping list app designed for families who want beautiful, private, synced grocery management
+
+## Product Overview
+
+Get Bananas is a shopping list app that combines a cozy, hand-drawn aesthetic with modern cloud synchronization. Built for families who want to manage groceries together without compromising on privacy or design quality.
+
+## Core Features
+
+### iCloud Sync
+- Instant synchronization across all devices
+- No account required beyond Apple ID
+- Real-time updates when family members modify lists
+- Works offline with sync on reconnection
+
+### Hand-Drawn Design
+- Unique hand-drawn visual aesthetic
+- Personal, warm feeling unlike clinical list apps
+- Custom illustrations and icons
+- Consistent design language throughout
+
+### Apple Watch Support
+- Standalone watchOS app
+- Check items off from your wrist while shopping
+- Quick glance at remaining items
+- Haptic feedback on completion
+
+### Claude Desktop Integration
+- Hands-free list management on macOS
+- Natural language item adding
+- Voice-based list creation
+- Powered by Anthropic's Claude AI
+
+### Privacy-First Architecture
+- Zero tracking or analytics
+- Data stored in user's personal iCloud
+- No third-party data sharing
+- No accounts beyond Apple ID
+
+### Automatic Sections
+- Intelligently group items by category
+- Create custom sections
+- Drag and drop organization
+- Collapsible section views
+
+### Language Support
+- 30+ languages fully localized
+- Automatic language detection
+- Regional formatting support
+
+## Platform Availability
+
+### iOS (iPhone & iPad)
+- Native SwiftUI app
+- Optimized for all screen sizes
+- iOS 17.0+ required
+
+### macOS
+- Native Mac app
+- Menu bar quick access
+- Keyboard shortcuts
+
+### watchOS
+- Standalone Apple Watch app
+- Complications support
+- Quick item checking
+
+## User Experience
+
+### Creating Lists
+1. Tap + to create new list
+2. Give it a name (e.g., "Weekly Groceries")
+3. Add items by typing or voice
+4. Items auto-categorize into sections
+
+### Sharing with Family
+1. Tap share button on any list
+2. Invite family members via iCloud
+3. Changes sync instantly for everyone
+4. See who added/checked items
+
+### Shopping Mode
+1. Open list when at store
+2. Check items as you shop
+3. Checked items move to bottom
+4. Clear checked items when done
+
+## Technical Details
+
+### iOS App
+- SwiftUI native interface
+- SwiftData local storage
+- CloudKit for sync
+- No external dependencies
+
+### Web Marketing Site
+- FastAPI backend
+- HTMX + Alpine.js frontend
+- Bootstrap 5 styling
+- Jinja2 templates
+
+## Target Audience
+
+- Families managing shared grocery lists
+- Couples coordinating household shopping
+- Individuals wanting a beautiful list app
+- Privacy-conscious users
+- Apple ecosystem users
+
+## Comparison to Alternatives
+
+| Feature | Get Bananas | Other Apps |
+|---------|-------------|------------|
+| Privacy | Zero tracking | Often tracks usage |
+| Design | Hand-drawn, unique | Generic, corporate |
+| Sync | iCloud (no account) | Requires signup |
+| Apple Watch | Full standalone | Often companion only |
+| Price | Free | Often subscription |
+
+## Coming Soon
+
+- App Store availability (currently in development)
+- Additional customization options
+- Recipe integration
+- Meal planning features
+
+## Contact Information
+
+- Website: https://941getbananas.com
+- Developer: 941 Apps (https://941apps.com)
+- Email: blake@941apps.com
+- Support: https://941getbananas.com/support
+
+## Related Resources
+
+- Features: https://941getbananas.com/features
+- Privacy: https://941getbananas.com/privacy
+- FAQ: https://941getbananas.com/faq

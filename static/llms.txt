@@ -1,0 +1,39 @@
+# Get Bananas
+
+> Hand-drawn shopping list app for families
+
+## Overview
+
+Get Bananas is a beautiful, privacy-first shopping list app with a cozy hand-drawn design. Share lists with family and sync instantly across all your Apple devices.
+
+## Key Features
+
+- iCloud Sync: iPhone, iPad, Mac, Apple Watch
+- Hand-Drawn Design: Personal, cozy aesthetic
+- Apple Watch Support: Check items off from your wrist
+- Claude Desktop Integration: Hands-free list management (macOS)
+- 30+ Languages supported
+- Privacy-First: Zero tracking, data in your iCloud
+
+## How It Works
+
+1. Create lists with automatic sections
+2. Share with family members
+3. Sync instantly across devices
+4. Check off items while shopping
+
+## Platforms
+
+- iOS (iPhone, iPad)
+- macOS
+- watchOS (Apple Watch)
+
+## Pricing
+
+Free to use
+
+## Contact
+
+- Website: https://941getbananas.com
+- Developer: 941 Apps
+- Email: blake@941apps.com
