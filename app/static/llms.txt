@@ -1,0 +1,39 @@
+# Banana List
+
+> Simple, delightful grocery list app for iOS with iCloud sync and a playful design.
+
+For comprehensive information, see: [llms-full.txt](https://941getbananas.com/llms-full.txt)
+
+## About
+
+Banana List is a straightforward grocery list app that makes shopping simple and fun. Create lists, share with family, and never forget the bananas again.
+
+## Key Features
+
+- Quick item entry with smart suggestions
+- iCloud sync across all your devices
+- Share lists with family and friends
+- Organize items by category
+- Check off items as you shop
+- Playful, delightful design
+- Widget support for quick access
+
+## App Details
+
+- **Platform**: iOS / iPadOS
+- **Developer**: 941 Apps, LLC
+- **Website**: https://941getbananas.com
+
+## Why "Banana List"?
+
+Because everyone forgets the bananas. This app makes sure you don't.
+
+## Contact
+
+- Website: https://941getbananas.com
+- Support: https://941getbananas.com/support
+- Developer: 941 Apps, LLC
+
+---
+
+*Last updated: 2026-01-20*
