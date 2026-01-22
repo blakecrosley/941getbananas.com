@@ -2,6 +2,8 @@
 
 > Hand-drawn shopping list app for families
 
+For comprehensive documentation, see: [llms-full.txt](https://941getbananas.com/llms-full.txt)
+
 ## Overview
 
 Get Bananas is a beautiful, privacy-first shopping list app with a cozy hand-drawn design. Share lists with family and sync instantly across all your Apple devices.
@@ -37,3 +39,7 @@ Free to use
 - Website: https://941getbananas.com
 - Developer: 941 Apps
 - Email: blake@941apps.com
+
+---
+
+Last updated: January 2026

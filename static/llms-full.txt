@@ -2,6 +2,8 @@
 
 > A hand-drawn shopping list app designed for families who want beautiful, private, synced grocery management
 
+For summary version, see: [llms.txt](https://941getbananas.com/llms.txt)
+
 ## Product Overview
 
 Get Bananas is a shopping list app that combines a cozy, hand-drawn aesthetic with modern cloud synchronization. Built for families who want to manage groceries together without compromising on privacy or design quality.
