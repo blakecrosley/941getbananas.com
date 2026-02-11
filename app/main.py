@@ -8,6 +8,7 @@ from app.routes import pages
 from app.security.headers import SecurityHeadersMiddleware
 from app.security.logging import SecurityLogMiddleware
 from app.security.rate_limit import RateLimitMiddleware
+from app.cache_assets import build_asset_map, make_asset_url
 
 
 class HeadRequestMiddleware(BaseHTTPMiddleware):
@@ -49,6 +50,16 @@ app.mount(
 
 # Templates
 templates = Jinja2Templates(directory=Path(__file__).parent / "templates")
+
+# Content-hash asset versioning
+_static_dir = Path(__file__).parent / "static"
+_asset_map = build_asset_map(_static_dir)
+templates.env.globals["asset"] = lambda path: make_asset_url(_asset_map, path)
+
+# Early Hints: preload Link header for critical CSS
+app.state.preload_links = [
+    f'<{make_asset_url(_asset_map, "css/custom.css")}>; rel=preload; as=style',
+]
 
 # Include routes
 app.include_router(pages.router)

@@ -3,9 +3,15 @@ from fastapi.responses import PlainTextResponse, Response, RedirectResponse, Fil
 from fastapi.templating import Jinja2Templates
 from pathlib import Path
 
+from app.cache_assets import build_asset_map, make_asset_url
+
 router = APIRouter()
 APP_DIR = Path(__file__).parent.parent
 templates = Jinja2Templates(directory=APP_DIR / "templates")
+
+# Content-hash asset versioning
+_asset_map = build_asset_map(APP_DIR / "static")
+templates.env.globals["asset"] = lambda path: make_asset_url(_asset_map, path)
 
 SITE_URL = "https://941getbananas.com"
 
