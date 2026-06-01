@@ -135,22 +135,22 @@ async def sitemap():
 
 @router.get("/")
 async def index(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request})
+    return templates.TemplateResponse(request=request, name="index.html")
 
 
 @router.get("/privacy")
 async def privacy(request: Request):
-    return templates.TemplateResponse("privacy.html", {"request": request})
+    return templates.TemplateResponse(request=request, name="privacy.html")
 
 
 @router.get("/support")
 async def support(request: Request):
-    return templates.TemplateResponse("support.html", {"request": request})
+    return templates.TemplateResponse(request=request, name="support.html")
 
 
 @router.get("/terms")
 async def terms(request: Request):
-    return templates.TemplateResponse("terms.html", {"request": request})
+    return templates.TemplateResponse(request=request, name="terms.html")
 
 
 @router.get("/llms.txt")
