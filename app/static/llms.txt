@@ -1,4 +1,4 @@
-# Banana List
+# Get Bananas
 
 > Simple, delightful grocery list app for iOS with iCloud sync and a playful design.
 
@@ -6,7 +6,7 @@ For comprehensive information, see: [llms-full.txt](https://941getbananas.com/ll
 
 ## About
 
-Banana List is a straightforward grocery list app that makes shopping simple and fun. Create lists, share with family, and never forget the bananas again.
+Get Bananas is a straightforward grocery list app that makes shopping simple and fun. Create lists, share with family, and never forget the bananas again.
 
 ## Key Features
 
@@ -24,7 +24,7 @@ Banana List is a straightforward grocery list app that makes shopping simple and
 - **Developer**: 941 Apps, LLC
 - **Website**: https://941getbananas.com
 
-## Why "Banana List"?
+## Why "Get Bananas"?
 
 Because everyone forgets the bananas. This app makes sure you don't.
 
