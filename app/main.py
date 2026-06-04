@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.responses import PlainTextResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from pathlib import Path
@@ -60,6 +61,16 @@ templates.env.globals["asset"] = lambda path: make_asset_url(_asset_map, path)
 app.state.preload_links = [
     f'<{make_asset_url(_asset_map, "css/custom.css")}>; rel=preload; as=style',
 ]
+
+# IndexNow verification key file (instant URL submission to Bing + IndexNow network)
+INDEXNOW_KEY = "8d90d3e15aa0025df5d5f6061bb46297"
+
+
+@app.get(f"/{INDEXNOW_KEY}.txt", response_class=PlainTextResponse)
+async def indexnow_key_file() -> str:
+    """IndexNow ownership-verification key file (https://www.indexnow.org)."""
+    return INDEXNOW_KEY
+
 
 # Include routes
 app.include_router(pages.router)
