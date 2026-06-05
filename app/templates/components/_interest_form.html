@@ -1,0 +1,53 @@
+{#  Interest capture for the not-yet-released app.
+
+    Posts cross-origin to the shared portfolio endpoint on 941apps.com
+    (CORS is opened there for this origin; form-encoded POST needs no
+    preflight). This site doesn't load HTMX, so a small guarded fetch
+    handler swaps the form for the server's confirmation partial.
+
+    Include with an optional anchor:
+        {% with anchor_id = "notify" %}{% include "components/_interest_form.html" %}{% endwith %}
+#}
+<div class="interest-capture"{% if anchor_id %} id="{{ anchor_id }}"{% endif %}>
+    <p class="interest-capture__lead mb-2">Get Bananas isn't on the App Store yet.</p>
+    <form class="interest-form d-flex gap-2 flex-wrap justify-content-center justify-content-lg-start"
+          action="https://941apps.com/api/interest" method="post">
+        <input type="hidden" name="product" value="get-bananas">
+        <input type="text" name="website" value="" tabindex="-1" autocomplete="off"
+               aria-hidden="true" class="interest-form-hp">
+        <label class="visually-hidden">Email address
+        </label>
+        <input type="email" name="email" class="form-control interest-form-email"
+               placeholder="you@example.com" required aria-label="Email address">
+        <button type="submit" class="btn btn-primary">Notify me</button>
+    </form>
+    <p class="interest-capture-fine text-muted mt-2 mb-0">One email when it ships. Nothing else, ever.</p>
+</div>
+<script>
+(function () {
+    if (window.__interestWired) { return; }
+    window.__interestWired = true;
+    document.addEventListener("submit", async function (e) {
+        var form = e.target.closest(".interest-form");
+        if (!form) { return; }
+        e.preventDefault();
+        var btn = form.querySelector("button[type=submit]");
+        if (btn) { btn.disabled = true; }
+        try {
+            var resp = await fetch(form.action, {
+                method: "POST",
+                body: new URLSearchParams(new FormData(form)),
+            });
+            var html = await resp.text();
+            var holder = document.createElement("div");
+            holder.innerHTML = html;
+            form.replaceWith(holder.firstElementChild || holder);
+        } catch (err) {
+            if (btn) { btn.disabled = false; }
+            form.insertAdjacentHTML("afterend",
+                '<p class="interest-error" role="alert">That didn\'t go through. ' +
+                'Email <a href="mailto:blake@941apps.com">blake@941apps.com</a> instead.</p>');
+        }
+    });
+})();
+</script>

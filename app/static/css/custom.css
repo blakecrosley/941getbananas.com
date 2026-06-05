@@ -709,3 +709,25 @@ button:focus-visible,
 [data-theme="dark"] .hero::before {
     opacity: 0.03;
 }
+
+/* ── Interest capture (notify-me for the unreleased app) ── */
+.interest-capture .interest-form-email {
+    max-width: 280px;
+}
+.interest-form-hp {
+    position: absolute !important;
+    left: -9999px !important;
+    width: 1px; height: 1px;
+    opacity: 0;
+}
+.interest-capture__lead {
+    font-weight: 600;
+}
+.interest-confirm {
+    font-weight: 600;
+    padding: 0.5rem 0;
+}
+.interest-error {
+    color: #b00020;
+    padding: 0.5rem 0;
+}
