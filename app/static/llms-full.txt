@@ -120,9 +120,14 @@ Get Bananas is a shopping list app that combines a cozy, hand-drawn aesthetic wi
 | Apple Watch | Full standalone | Often companion only |
 | Price | Free | Often subscription |
 
+## Availability
+
+- On the App Store now for iPhone, iPad, and Apple Watch: https://apps.apple.com/app/get-bananas/id6756241534
+- Mac app with a Claude Desktop extension: on the way
+
 ## Coming Soon
 
-- App Store availability (currently in development)
+- Mac app (with Claude Desktop extension built in)
 - Additional customization options
 - Recipe integration
 - Meal planning features

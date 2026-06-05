@@ -20,7 +20,8 @@ Get Bananas is a straightforward grocery list app that makes shopping simple and
 
 ## App Details
 
-- **Platform**: iOS / iPadOS
+- **Platform**: iOS / iPadOS / watchOS (Mac app on the way)
+- **App Store**: https://apps.apple.com/app/get-bananas/id6756241534
 - **Developer**: 941 Apps, LLC
 - **Website**: https://941getbananas.com
 

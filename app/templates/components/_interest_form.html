@@ -1,18 +1,29 @@
-{#  Interest capture for the not-yet-released app.
+{#  Download CTA + Mac-version notify.
 
-    Posts cross-origin to the shared portfolio endpoint on 941apps.com
-    (CORS is opened there for this origin; form-encoded POST needs no
-    preflight). This site doesn't load HTMX, so a small guarded fetch
-    handler swaps the form for the server's confirmation partial.
+    Get Bananas is live on the App Store (iPhone, iPad, Apple Watch).
+    The Mac app is still on the way, so the interest capture stays —
+    scoped to the Mac version (product=get-bananas-mac).
+
+    The form posts cross-origin to the shared portfolio endpoint on
+    941apps.com (CORS is opened there for this origin; form-encoded
+    POST needs no preflight). This site doesn't load HTMX, so a small
+    guarded fetch handler swaps the form for the server's confirmation.
 
     Include with an optional anchor:
         {% with anchor_id = "notify" %}{% include "components/_interest_form.html" %}{% endwith %}
 #}
 <div class="interest-capture"{% if anchor_id %} id="{{ anchor_id }}"{% endif %}>
-    <p class="interest-capture__lead mb-2">Get Bananas isn't on the App Store yet.</p>
+    <p class="mb-3">
+        <a href="https://apps.apple.com/app/get-bananas/id6756241534" target="_blank" rel="noopener">
+            <img src="{{ url_for('static', path='images/app-store-badge.png') }}"
+                 alt="Download Get Bananas on the App Store" width="180" height="60"
+                 style="height: 60px; width: auto;">
+        </a>
+    </p>
+    <p class="interest-capture__lead mb-2">The Mac app is on the way. Want it the day it lands?</p>
     <form class="interest-form d-flex gap-2 flex-wrap justify-content-center justify-content-lg-start"
           action="https://941apps.com/api/interest" method="post">
-        <input type="hidden" name="product" value="get-bananas">
+        <input type="hidden" name="product" value="get-bananas-mac">
         <input type="text" name="website" value="" tabindex="-1" autocomplete="off"
                aria-hidden="true" class="interest-form-hp">
         <label class="visually-hidden">Email address
@@ -21,7 +32,7 @@
                placeholder="you@example.com" required aria-label="Email address">
         <button type="submit" class="btn btn-primary">Notify me</button>
     </form>
-    <p class="interest-capture-fine text-muted mt-2 mb-0">One email when it ships. Nothing else, ever.</p>
+    <p class="interest-capture-fine text-muted mt-2 mb-0">One email when the Mac app ships. Nothing else, ever.</p>
 </div>
 <script>
 (function () {
