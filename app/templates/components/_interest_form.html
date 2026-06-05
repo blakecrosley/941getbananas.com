@@ -27,6 +27,24 @@
 (function () {
     if (window.__interestWired) { return; }
     window.__interestWired = true;
+    /* Security posture: the cross-origin response is never injected as HTML.
+       DOMParser parses inertly; we extract TEXT only and build nodes with
+       createElement/textContent. */
+    function notice(cls, text, withMailto) {
+        var div = document.createElement("div");
+        div.className = cls;
+        div.setAttribute("role", cls === "interest-error" ? "alert" : "status");
+        div.textContent = text;
+        if (withMailto) {
+            div.appendChild(document.createTextNode(" Email "));
+            var a = document.createElement("a");
+            a.href = "mailto:blake@941apps.com";
+            a.textContent = "blake@941apps.com";
+            div.appendChild(a);
+            div.appendChild(document.createTextNode(" instead."));
+        }
+        return div;
+    }
     document.addEventListener("submit", async function (e) {
         var form = e.target.closest(".interest-form");
         if (!form) { return; }
@@ -38,15 +56,20 @@
                 method: "POST",
                 body: new URLSearchParams(new FormData(form)),
             });
-            var html = await resp.text();
-            var holder = document.createElement("div");
-            holder.innerHTML = html;
-            form.replaceWith(holder.firstElementChild || holder);
+            var raw = await resp.text();
+            var doc = new DOMParser().parseFromString(raw, "text/html");
+            var text = (doc.body.textContent || "").trim();
+            if (resp.ok && text) {
+                form.replaceWith(notice("interest-confirm", text, false));
+            } else {
+                if (btn) { btn.disabled = false; }
+                form.insertAdjacentElement("afterend",
+                    notice("interest-error", "That didn't go through.", true));
+            }
         } catch (err) {
             if (btn) { btn.disabled = false; }
-            form.insertAdjacentHTML("afterend",
-                '<p class="interest-error" role="alert">That didn\'t go through. ' +
-                'Email <a href="mailto:blake@941apps.com">blake@941apps.com</a> instead.</p>');
+            form.insertAdjacentElement("afterend",
+                notice("interest-error", "That didn't go through.", true));
         }
     });
 })();
