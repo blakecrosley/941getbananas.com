@@ -10,13 +10,29 @@
                 </p>
                 {% with anchor_id = "notify" %}{% include "components/_interest_form.html" %}{% endwith %}
             </div>
-            <div class="col-lg-4 text-center mt-5 mt-lg-0">
-                <div class="hero-mascot">
-                    <img
-                        src="{{ url_for('static', path='images/app-icon.png') }}"
-                        alt="Get Bananas app icon"
-                        class="mascot-image"
-                    >
+            <div class="col-lg-5 text-center mt-5 mt-lg-0">
+                <div class="bn-phone" role="img" aria-label="A hand-drawn family shopping list in the Get Bananas app: bananas and oat milk checked off, more to go, shared with family">
+                    <div class="bn-phone__notch" aria-hidden="true"></div>
+                    <div class="bn-phone__screen">
+                        <div class="bn-list-head">
+                            <span class="bn-list-title">Saturday Shop</span>
+                            <span class="bn-list-emoji" aria-hidden="true">🍌</span>
+                        </div>
+                        <ul class="bn-list">
+                            <li class="bn-item bn-item--done"><span class="bn-check" aria-hidden="true"></span>Bananas</li>
+                            <li class="bn-item bn-item--done"><span class="bn-check" aria-hidden="true"></span>Oat milk</li>
+                            <li class="bn-item"><span class="bn-check" aria-hidden="true"></span>Sourdough</li>
+                            <li class="bn-item"><span class="bn-check" aria-hidden="true"></span>Strawberries</li>
+                            <li class="bn-item"><span class="bn-check" aria-hidden="true"></span>Coffee beans</li>
+                            <li class="bn-item bn-item--add"><span class="bn-plus" aria-hidden="true">+</span>Add an item…</li>
+                        </ul>
+                        <div class="bn-avatars" aria-hidden="true">
+                            <span class="bn-avatar" style="--c:var(--banana-accent-blue)">M</span>
+                            <span class="bn-avatar" style="--c:var(--banana-accent-pink)">J</span>
+                            <span class="bn-avatar" style="--c:var(--banana-secondary)">+2</span>
+                            <span class="bn-shared">shared with family</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
