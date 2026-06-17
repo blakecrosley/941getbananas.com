@@ -7,6 +7,94 @@
 {% include "components/hero.html" %}
 {% include "components/features.html" %}
 
+<!-- How it works: jot -> shop -> everywhere -->
+<section id="how" class="bn-how">
+    <div class="container">
+        <p class="bn-how__kicker" data-reveal>How it works</p>
+        <h2 class="bn-how__title" data-reveal style="--d:.08s">Jot it, shop it — it's everywhere</h2>
+        <p class="bn-how__sub" data-reveal style="--d:.16s">Write your list like you would on paper.
+            Check it off at the store. It's already waiting on your other devices — no accounts, no fuss.</p>
+
+        <div class="scrolly" data-step="1">
+            <div class="scrolly-grid">
+                <div class="scrolly-stage" aria-hidden="true">
+
+                    <!-- 01 · jot the list -->
+                    <div class="stage-device stage-1">
+                        <div class="bn-paper">
+                            <div class="bn-paper__title">Groceries</div>
+                            <ul class="bn-checklist">
+                                <li style="--i:0"><span class="bn-box"></span>Bananas</li>
+                                <li style="--i:1"><span class="bn-box"></span>Almond milk</li>
+                                <li style="--i:2"><span class="bn-box"></span>Eggs</li>
+                                <li style="--i:3"><span class="bn-box"></span>Avocados</li>
+                                <li style="--i:4"><span class="bn-box"></span>Sourdough</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 02 · check it off -->
+                    <div class="stage-device stage-2">
+                        <div class="bn-paper">
+                            <div class="bn-paper__title">Groceries</div>
+                            <ul class="bn-checklist">
+                                <li class="is-checked" style="--i:0"><span class="bn-box"></span>Bananas</li>
+                                <li class="is-checked" style="--i:1"><span class="bn-box"></span>Almond milk</li>
+                                <li class="is-checked" style="--i:2"><span class="bn-box"></span>Eggs</li>
+                                <li style="--i:3"><span class="bn-box"></span>Avocados</li>
+                                <li style="--i:4"><span class="bn-box"></span>Sourdough</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 03 · on every device -->
+                    <div class="stage-device stage-3">
+                        <div class="bn-devices">
+                            <div class="bn-mini bn-mini--phone">
+                                <div class="bn-mini__label">iPhone</div>
+                                <span class="bn-mini__line"></span><span class="bn-mini__line short"></span><span class="bn-mini__line"></span>
+                            </div>
+                            <div class="bn-mini bn-mini--pad">
+                                <div class="bn-mini__label">iPad</div>
+                                <span class="bn-mini__line"></span><span class="bn-mini__line"></span><span class="bn-mini__line short"></span>
+                            </div>
+                            <div class="bn-mini bn-mini--watch">
+                                <div class="bn-mini__label">Watch</div>
+                                <span class="bn-mini__line short"></span><span class="bn-mini__line"></span>
+                            </div>
+                            <span class="bn-devices__badge">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+                                iCloud
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+                <div>
+                    <div class="scrolly-step" data-index="1">
+                        <div class="loop-num">01</div>
+                        <h3>Jot the list</h3>
+                        <p>Tap and type — Get Bananas feels like scribbling on the back of an envelope,
+                            only tidier. Add what you need the moment you think of it.</p>
+                    </div>
+                    <div class="scrolly-step" data-index="2">
+                        <div class="loop-num">02</div>
+                        <h3>Check it off at the store</h3>
+                        <p>Big, satisfying checkmarks as you fill the cart. Items cross off the second
+                            you tap — no hunting, no clutter.</p>
+                    </div>
+                    <div class="scrolly-step" data-index="3">
+                        <div class="loop-num">03</div>
+                        <h3>It's on every device</h3>
+                        <p>iCloud keeps the same list on your iPhone, iPad, and Apple Watch. Start it on
+                            the couch, finish it at the store — it's already there.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- CTA Section -->
 <section class="cta">
     <div class="container">
@@ -19,4 +107,8 @@
         </div>
     </div>
 </section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ asset('js/motion.js') }}"></script>
 {% endblock %}
