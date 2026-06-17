@@ -930,3 +930,44 @@ button:focus-visible,
     [data-step="2"] .bn-checklist li.is-checked .bn-box::after { opacity: 1; animation: none; }
     [data-reveal] { opacity: 1; transform: none; transition: none; }
 }
+
+/* ============================================================
+   Dark-mode contrast fixes (a11y)
+   The yellow --banana-primary is identical in both themes, but
+   --banana-pen flips to off-white in dark mode. Any text/icon on
+   a yellow surface must therefore be pinned to dark ink in dark
+   mode, or it drops to ~1.1:1 contrast (invisible).
+   ============================================================ */
+[data-theme="dark"] .btn-primary,
+[data-theme="dark"] .btn-primary:hover,
+[data-theme="dark"] .btn-primary:focus,
+[data-theme="dark"] .btn-primary:focus-visible {
+    color: #19191F;
+    border-color: #19191F;
+}
+[data-theme="dark"] .btn-primary:hover {
+    box-shadow: 2px 2px 0 #19191F;
+}
+[data-theme="dark"] .theme-toggle:hover {
+    color: #19191F;
+}
+[data-theme="dark"] .faq-question::before {
+    color: #19191F;
+    border-color: #19191F;
+}
+
+/* Form inputs: explicit, theme-correct surface + placeholder.
+   Bootstrap's default placeholder colour is tuned for light mode
+   and was never overridden, so it rendered dark-on-dark. */
+.form-control::placeholder { color: var(--banana-muted); opacity: 1; }
+[data-theme="dark"] .form-control {
+    background-color: var(--banana-surface);
+    border-color: #3A3A3A;
+    color: var(--banana-pen);
+}
+[data-theme="dark"] .form-control::placeholder { color: var(--banana-muted); opacity: 1; }
+[data-theme="dark"] .form-control:focus {
+    background-color: var(--banana-surface);
+    border-color: var(--banana-primary);
+    color: var(--banana-pen);
+}
