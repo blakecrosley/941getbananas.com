@@ -2,6 +2,8 @@
    Vanilla, no deps. Respects prefers-reduced-motion. */
 (function () {
     var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    // Mark JS-on so CSS only hides [data-reveal]/stages when we can reveal them.
+    document.documentElement.classList.add("motion-on");
 
     // Scroll reveals: [data-reveal] elements get .in-view when visible.
     var revealables = document.querySelectorAll("[data-reveal]");
